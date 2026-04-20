@@ -20,8 +20,8 @@ jobs:
           port: 21
           local-dir: ./
           server-dir: /ci-cd/public_html/
-          exclude:
-            - "**/.ftp-deploy-sync-state.json"
-            - "**/test/**"
-            - "**/index.htm"
+          exclude: |
+            "**/.ftp-deploy-sync-state.json"
+            "**/test/**"
+            "**/index.htm"
           dangerous-clean-slate: true
