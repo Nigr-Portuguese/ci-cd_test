@@ -4,6 +4,22 @@ on:
     branches:
       - main
 jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Deploy via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: vh360.timeweb.ru
+          username: ck86039_ftp
+          password: ${{ secrets.FTP_PASSWORD }}
+          port: 21
+          local-dir: ./
+          server-dir: /ci-cd/public_html/
+          exclude: "**/.env"
+          retry: 3
+
   # deploy:
   #   runs-on: ubuntu-latest
   #   steps:
@@ -24,24 +40,3 @@ jobs:
   #         timeout: 20000
   #         retry: 2
   #         dangerous-clean-slate: true
-  deploy:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - name: Deploy via FTP
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
-        with:
-          server: vh360.timeweb.ru
-          username: ck86039_ftp
-          password: ${{ secrets.FTP_PASSWORD }}
-          port: 21
-          local-dir: ./
-          server-dir: /ci-cd/public_html/
-          exclude: "**/.env"
-          # exclude: |
-          #   "**/.ftp-deploy-sync-state.json"
-          #   "**/test/**"
-          #   "**/index.htm"
-          # timeout: 20000
-          retry: 3
-          dangerous-clean-slate: true
