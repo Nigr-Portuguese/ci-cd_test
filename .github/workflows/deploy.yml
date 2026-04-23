@@ -43,4 +43,4 @@ jobs:
           #   "**/index.htm"
           # timeout: 20000
           # retry: 2
-          # dangerous-clean-slate: true
+          dangerous-clean-slate: true
