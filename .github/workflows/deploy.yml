@@ -18,9 +18,9 @@ jobs:
           local-dir: ./
           server-dir: /ci-cd/public_html/
           exclude: |
-            "**/.env"
-            "**/.git*/**"
-            "**/.github/**"
+            **/.env
+            **/.git*/**
+            **/.github/**
           retry: 3
 
   # deploy:
