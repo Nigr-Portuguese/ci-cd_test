@@ -41,6 +41,6 @@ jobs:
           #   "**/.ftp-deploy-sync-state.json"
           #   "**/test/**"
           #   "**/index.htm"
-          timeout: 20000
+          # timeout: 20000
           # retry: 2
-          dangerous-clean-slate: true
+          # dangerous-clean-slate: true
