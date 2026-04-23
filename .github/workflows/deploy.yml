@@ -17,10 +17,10 @@ jobs:
           port: 21
           local-dir: ./
           server-dir: /ci-cd/public_html/
-          exclude: |
-            **/.env
-            **/.git*/**
-            **/.github/**
+          # exclude: |
+          #   **/.env
+          #   **/.git*/**
+          #   **/.github/**
 
   # deploy:
   #   runs-on: ubuntu-latest
