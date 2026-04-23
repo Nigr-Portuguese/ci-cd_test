@@ -21,7 +21,6 @@ jobs:
             **/.env
             **/.git*/**
             **/.github/**
-          retry: 3
 
   # deploy:
   #   runs-on: ubuntu-latest
